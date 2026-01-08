@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人博客</title>
+    <style>
+.nav{
+background-color: rgb(83, 173, 224);
+padding: 15px 0 ;
+text-align: center;
+}
+.nav a{
+color: aliceblue;
+text-decoration: none;
+margin: 0 20px;
+font-size: 16px;
+}
+.nav a:hover{
+color: #c5c220;
+}
+.nav a.active{
+    color: #ca0e0e;
+    font-weight: bold;
+}
+.touxiang{
+    text-align: center;
+    animation: float 5s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+}
+
+    </style>
+</head>
+<body>
+ <div class="nav">
+<img src="马.webp" alt="博客logo" style="height: 45px;margin-right: 20px;">    
+<a href="index.html"class=active>首页</a>
+<a href="tech.html">关于我</a>
+<a href="life.html">生活随笔</a>
+<a href="about.html">技术分享</a>
+ </div>   
+<section class="about-me" style="padding: 20px; background: #f9f9f9; border-radius: 8px; margin: 20px 0;">
+  <h2 style="color: #333; margin-bottom: 15px;">关于我</h2>
+  <div style="display: flex; align-items: center; gap: 20px; flex-wrap: wrap;">
+    <img class="touxiang"  src="自我.JPG" alt="头像" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover;">
+    <div style="flex: 1; min-width: 280px;">
+      <p style="line-height: 1.6; color: #555; margin: 0;">
+        Hello～我是<span style="color: #4299e1; font-weight: 600;">小楊同学</span>，一个喜欢记录生活的00后。
+      </p>
+      <h3 style="color: #ed8936;">标签；好美，再一次被世界震撼</h3>
+      <p style="line-height: 1.6; color: #555; margin: 8px 0 0 0;">
+        闲暇时爱泡咖啡馆、拍风景照，偶尔也会写写随笔和旅行攻略。
+        开这个博客的初衷，是想把平凡日子里的小美好分享给同样热爱生活的你～
+      </p>
+      <div style="margin-top: 12px;">
+        <a href="#" style="color: #38b2ac; margin-right: 10px;">📸 摄影</a>
+        <a href="#" style="color: #ed8936;">✈️ 旅行</a>
+      </div>
+    </div>
+  </div>
+</section>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>生活随笔</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Microsoft YaHei", sans-serif;
+        }
+        header {
+            background-color: #2c3e50;
+            padding: 1rem 2rem;
+        }
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .blog-title a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            margin-left: 1.5rem;
+        }
+        .nav-links a:hover {
+            color: #3498db;
+        }
+        .nav-links a.active {
+            color: #3498db;
+            font-weight: bold;
+        }
+        .essay-container {
+            max-width: 1200px;
+            margin: 3rem auto;
+            padding: 0 2rem;
+            display: flex;
+            gap: 2.5rem;
+        }
+        .essay-list {
+            flex: 3;
+        }
+        .page-title {
+            color: #2c3e50;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #3498db;
+        }
+        .essay-card {
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            padding: 1.8rem;
+            margin-bottom: 1.8rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            transition: transform 0.3s ease;
+        }
+        .essay-card:hover {
+            transform: translateY(-5px);
+        }
+        .essay-title {
+            color: #2c3e50;
+            font-size: 1.4rem;
+            margin-bottom: 0.8rem;
+        }
+        .essay-title a {
+            text-decoration: none;
+            color: inherit;
+        }
+        .essay-title a:hover {
+            color: #3498db;
+        }
+        .essay-meta {
+            color: #7f8c8d;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            display: flex;
+            gap: 1.5rem;
+        }
+        .essay-excerpt {
+            color: #555;
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+        .essay-tag {
+            display: inline-block;
+            background-color: #e3f2fd;
+            color: #3498db;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-right: 0.5rem;
+        }
+        .essay-sidebar {
+            flex: 1;
+        }
+        .sidebar-box {
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1.8rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+        }
+        .sidebar-title {
+            color: #2c3e50;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #3498db;
+        }
+        .category-list {
+            list-style: none;
+        }
+        .category-list li {
+            margin-bottom: 0.8rem;
+        }
+        .category-list a {
+            text-decoration: none;
+            color: #555;
+            display: flex;
+            justify-content: space-between;
+            padding: 0.5rem 0;
+            border-bottom: 1px dashed #eee;
+        }
+        .category-list a:hover {
+            color: #3498db;
+        }
+        .category-count {
+            background-color: #3498db;
+            color: white;
+            padding: 0.1rem 0.5rem;
+            border-radius: 10px;
+            font-size: 0.8rem;
+        }
+        .search-box {
+            display: flex;
+            gap: 0.5rem;
+        }
+        .search-input {
+            flex: 1;
+            padding: 0.6rem 1rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            outline: none;
+        }
+        .search-input:focus {
+            border-color: #3498db;
+        }
+        .search-btn {
+            padding: 0.6rem 1.2rem;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .search-btn:hover {
+            background-color: #2980b9;
+        }
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: 3rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="essay-container">
+        <section class="essay-list">
+            <h2 class="page-title">生活随笔</h2>
+
+            <article class="essay-card">
+                <h3 class="essay-title"><a href="#">周末的公园漫步，遇见了春天的风</a ></h3>
+                <div class="essay-meta">
+                    <span>2026-01-10</span>
+                    <span>阅读 128</span>
+                </div>
+                <p class="essay-excerpt">
+                    难得的晴天，放下电脑去家附近的公园走了走。阳光透过树叶的缝隙洒下来，落在草坪上，像撒了一把碎金。长椅上坐着晒太阳的老人，湖边有孩子在喂鸽子，风里带着青草和花香的味道……
+                </p >
+                <div>
+                    <span class="essay-tag">日常</span>
+                    <span class="essay-tag">风景</span>
+                </div>
+            </article>
+
+            <article class="essay-card">
+                <h3 class="essay-title"><a href="#">一本旧书，一段慢时光</a ></h3>
+                <div class="essay-meta">
+                    <span>2026-01-05</span>
+                    <span>阅读 96</span>
+                </div>
+                <p class="essay-excerpt">
+                    整理书架时翻出了一本多年前买的散文集，书页已经微微泛黄，边角还有些磨损。坐在阳台的藤椅上，就着一杯热茶慢慢读，才发现以前匆匆翻过的句子，如今读来竟有了不一样的味道……
+                </p >
+                <div>
+                    <span class="essay-tag">阅读</span>
+                    <span class="essay-tag">感悟</span>
+                </div>
+            </article>
+
+            <article class="essay-card">
+                <h3 class="essay-title"><a href="#">第一次尝试烘焙，翻车但快乐着</a ></h3>
+                <div class="essay-meta">
+                    <span>2026-01-01</span>
+                    <span>阅读 156</span>
+                </div>
+                <p class="essay-excerpt">
+                    元旦假期突发奇想，买了一堆烘焙材料，打算做个戚风蛋糕。结果蛋白霜没打发好，蛋糕烤出来塌了半边，尝起来却意外的香甜。手忙脚乱的一下午，虽然翻车了，但看着歪歪扭扭的蛋糕，竟然觉得很治愈……
+                </p >
+                <div>
+                    <span class="essay-tag">美食</span>
+                    <span class="essay-tag">趣事</span>
+                </div>
+            </article>
+        </section>
+        <aside class="essay-sidebar">
+            <div class="sidebar-box">
+                <h3 class="sidebar-title">随笔分类</h3>
+                <ul class="category-list">
+                    <li><a href="#">日常 <span class="category-count">8</span></a ></li>
+                    <li><a href="#">阅读 <span class="category-count">5</span></a ></li>
+                    <li><a href="#">风景 <span class="category-count">4</span></a ></li>
+                    <li><a href="#">美食 <span class="category-count">3</span></a ></li>
+                    <li><a href="#">感悟 <span class="category-count">6</span></a ></li>
+                </ul>
+            </div>
+            <div class="sidebar-box">
+                <h3 class="sidebar-title">搜索随笔</h3>
+                <div class="search-box">
+                    <input type="text" class="search-input" placeholder="输入关键词搜索...">
+                    <button class="search-btn">搜索</button>
+                </div>
+            </div>
+        </aside>
+    </div>
+</body>
+</html>
+</body>
+</html>
